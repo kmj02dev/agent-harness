@@ -12,13 +12,13 @@ import sys
 
 EXECUTION_PROTOCOL = """\
 ## Execution Protocol
-1. Read TODO.md, LESSONS.md, DECISIONS.md to understand current state.
+1. Read TODO.md, LESSONS.md (global → project), WORKLOG.md to understand current state.
 2. Break the goal into subtasks and update TODO.md.
 3. Execute each subtask. After each, reflect: what worked, what didn't?
-4. Record lessons in LESSONS.md. Record decisions in DECISIONS.md.
+4. Record lessons in LESSONS.md. Record decisions inline in WORKLOG.md (→ 결정: marker).
 5. Update TODO.md as tasks complete.
 6. Continue until the goal is fully achieved — do not stop to ask.
-7. When done, update WORKLOG.md with a summary."""
+7. When done, update WORKLOG.md with final status and summary."""
 
 MAX_TURNS = 200
 
@@ -55,7 +55,7 @@ def main() -> None:
     MAX_TURNS = args.max_turns
 
     if args.resume:
-        goal = "Read TODO.md and continue working on the next pending task. Update TODO.md as you make progress."
+        goal = "Read TODO.md and WORKLOG.md to understand current state. Continue working on the next pending task. Update TODO.md and WORKLOG.md as you make progress."
     elif args.goal:
         goal = " ".join(args.goal)
     else:
