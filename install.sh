@@ -6,8 +6,8 @@ HARNESS_DIR="$(cd "$(dirname "$0")" && pwd)"
 # Global symlinks
 ln -sf "$HARNESS_DIR/CLAUDE.md" ~/CLAUDE.md
 ln -sf "$HARNESS_DIR/LESSONS.md" ~/LESSONS.md
-ln -sf "$HARNESS_DIR/agent_docs" ~/agent_docs
-ln -sf "$HARNESS_DIR/domains" ~/domains
+ln -sfn "$HARNESS_DIR/agent_docs" ~/agent_docs
+ln -sfn "$HARNESS_DIR/domains" ~/domains
 ln -sf "$HARNESS_DIR/run-agent.sh" ~/run-agent.sh
 ln -sf "$HARNESS_DIR/run-agent.py" ~/run-agent.py
 echo "Global harness symlinks installed."
