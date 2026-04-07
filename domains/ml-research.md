@@ -12,6 +12,7 @@
 - 실험 결과는 wandb 또는 CSV로 기록 — 나중에 비교할 수 있어야 함
 - 모델 체크포인트 저장 주기 설정 — 학습 중단 시 복구 가능해야 함
 - 베이스라인을 먼저 구현하고 돌린다 — 자기 방법과 비교할 기준점 확보
+- GPU 기본 사용, 불가능 시 CPU.
 
 ## Pitfalls
 - GPU 메모리 부족: `torch.cuda.empty_cache()` 대신 배치 크기 조정 또는 gradient accumulation
