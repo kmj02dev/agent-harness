@@ -27,7 +27,7 @@ ${GOAL}
 
 ## Execution Protocol
 1. Read TODO.md, LESSONS.md (global → project), WORKLOG.md to understand current state.
-2. Determine the activity mode from the goal and read the corresponding agent_docs/CLAUDE.<mode>.md (e.g., survey, development, research, planning). Follow its rules strictly.
+2. Determine the activity mode from the goal and read the corresponding ~/agent_docs/CLAUDE.<mode>.md (e.g., survey, development, research, planning). Follow its rules strictly.
 3. Break the goal into subtasks and update TODO.md.
 4. Execute each subtask. After each, reflect: what worked, what didn't?
 5. Record lessons in LESSONS.md. Record decisions inline in WORKLOG.md (→ 결정: marker).

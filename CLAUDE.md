@@ -55,7 +55,7 @@ TODO.md의 매 작업 항목은 실행 후 반드시 평가 단계를 거친다.
 컨텍스트는 가장 희소한 자원이다.
 - 읽기/탐색 작업은 subagent에 위임 (컨텍스트 방화벽)
 - 관련 없는 작업 간 `/clear`
-- 모드별 상세 규칙은 `agent_docs/`에 분리 — 해당 모드 진입 시에만 읽기:
+- 모드별 상세 규칙은 `~/agent_docs/`에 분리 — 해당 모드 진입 시에만 읽기:
   - 기획 → `CLAUDE.planning.md` / 개발 → `CLAUDE.development.md` / 조사 → `CLAUDE.research.md`
   - 아이디어 → `CLAUDE.ideation.md` / 분석 → `CLAUDE.analysis.md` / 집필 → `CLAUDE.writing.md`
   - 동향 조사 → `CLAUDE.survey.md` / 학습·교육 → `CLAUDE.teaching.md`
@@ -71,4 +71,4 @@ TODO.md의 매 작업 항목은 실행 후 반드시 평가 단계를 거친다.
 
 ## Convention
 
-- 한국어 대화, 영어 코드/커밋. GPU 기본, CPU는 디버깅용.
+- 한국어 대화, 영어 코드/커밋.
