@@ -1,4 +1,24 @@
 {
+  "SessionStart": [
+    {
+      "matcher": "startup",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "bash ~/harness/hooks/session-start.sh"
+        }
+      ]
+    },
+    {
+      "matcher": "compact",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "bash ~/harness/hooks/session-start.sh"
+        }
+      ]
+    }
+  ],
   "PreToolUse": [
     {
       "matcher": "Bash",
