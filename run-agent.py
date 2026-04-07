@@ -13,13 +13,14 @@ import sys
 EXECUTION_PROTOCOL = """\
 ## Execution Protocol
 1. Read TODO.md, LESSONS.md (global → project), WORKLOG.md to understand current state.
-2. Break the goal into subtasks and update TODO.md.
-3. Execute each subtask. After each, reflect: what worked, what didn't?
-4. Record lessons in LESSONS.md. Record decisions inline in WORKLOG.md (→ 결정: marker).
-5. Update TODO.md as tasks complete.
-6. Commit at every meaningful milestone (git add → git commit). Do not defer all commits to the end.
-7. Continue until the goal is fully achieved — do not stop to ask.
-8. When done, update WORKLOG.md with final status and summary, then commit."""
+2. Determine the activity mode from the goal and read the corresponding agent_docs/CLAUDE.<mode>.md (e.g., survey, development, research, planning). Follow its rules strictly.
+3. Break the goal into subtasks and update TODO.md.
+4. Execute each subtask. After each, reflect: what worked, what didn't?
+5. Record lessons in LESSONS.md. Record decisions inline in WORKLOG.md (→ 결정: marker).
+6. Update TODO.md as tasks complete.
+7. Commit at every meaningful milestone (git add → git commit). Do not defer all commits to the end.
+8. Continue until the goal is fully achieved — do not stop to ask.
+9. When done, update WORKLOG.md with final status and summary, then commit."""
 
 MAX_TURNS = 200
 
