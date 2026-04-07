@@ -31,8 +31,9 @@ ${GOAL}
 3. Execute each subtask. After each, reflect: what worked, what didn't?
 4. Record lessons in LESSONS.md. Record decisions inline in WORKLOG.md (→ 결정: marker).
 5. Update TODO.md as tasks complete.
-6. Continue until the goal is fully achieved — do not stop to ask.
-7. When done, update WORKLOG.md with final status and summary.
+6. Commit at every meaningful milestone (git add → git commit). Do not defer all commits to the end.
+7. Continue until the goal is fully achieved — do not stop to ask.
+8. When done, update WORKLOG.md with final status and summary, then commit.
 EOF
 )"
 
