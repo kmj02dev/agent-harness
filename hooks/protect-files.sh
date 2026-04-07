@@ -8,9 +8,7 @@ if [ -z "$FILE_PATH" ]; then
   exit 0
 fi
 
-# Protected file patterns (secrets and credentials only)
-# Note: .claude/settings.json is intentionally NOT protected
-# so that hooks can be managed programmatically.
+# Protected file patterns — 추가만 가능, 삭제 금지
 PROTECTED_PATTERNS=(
   '\.env$'
   '\.env\.'
@@ -23,6 +21,7 @@ PROTECTED_PATTERNS=(
   'id_ed25519'
   '\.p12$'
   '\.pfx$'
+  '\.claude/settings\.json'
 )
 
 for pattern in "${PROTECTED_PATTERNS[@]}"; do
