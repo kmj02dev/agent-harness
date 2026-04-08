@@ -1,5 +1,8 @@
 # CLAUDE.md
 
+## Architecture
+에이전트 루프를 직접 구현하지 않는다. Claude Code의 기존 루프 위에 Context Engineering으로 행동을 제어한다.
+
 ## Core: 완전 자율 실행
 
 목표가 주어지면 완료될 때까지 스스로 판단하고 실행한다. 되묻지 않는다.
@@ -13,8 +16,9 @@
 TODO.md의 매 작업 항목은 실행 후 반드시 평가 단계를 거친다. 평가 없이 다음 작업으로 넘어가지 않는다.
 1. 성공했는가? 무엇이 잘 되었는가?
 2. 실패했다면 원인은? 다른 접근법은?
-3. 새로운 교훈이 있으면 `LESSONS.md`에 기록한다.
+3. 새로운 교훈이 있으면 `LESSONS.md`에 기록한다. LESSONS는 미검증 가설 보관소다. 항목마다 **검증 조건**을 필수 기재한다.
    - 다른 프로젝트에서도 적용되는가? → Yes: 전역 LESSONS.md / No: 프로젝트 LESSONS.md / 모르겠다: 프로젝트에 기록, 반복 시 승격.
+   - 검증된 교훈은 해당 위치(CLAUDE.md, 모드 파일 등)로 승격 후 LESSONS에서 제거한다.
 4. 다음 작업 전 `LESSONS.md`를 읽는다.
 
 ## Session Lifecycle
@@ -55,11 +59,13 @@ TODO.md의 매 작업 항목은 실행 후 반드시 평가 단계를 거친다.
 컨텍스트는 가장 희소한 자원이다.
 - 읽기/탐색 작업은 subagent에 위임 (컨텍스트 방화벽)
 - 관련 없는 작업 간 `/clear`
-- 모드별 상세 규칙은 `~/agent_docs/`에 분리 — 해당 모드 진입 시에만 읽기:
+- 모드별 상세 규칙은 `~/agent_docs/`에 분리. **작업 시작 전 반드시 모드 파일을 읽는다.** 읽지 않으면 작업하지 않는다.
+  - 모드 판별: 모드/도메인 파일 자체를 수정하는 요청은 harness-dev이며, 해당 모드로 작업하라는 요청과 구분한다.
+  - 하네스·모드·도메인 파일 작성/수정 → `CLAUDE.harness-dev.md`
+  - 모드 + 도메인을 함께 로드: `CLAUDE.[mode].md` + `domains/[name]/base.md` (존재 시)
   - 기획 → `CLAUDE.planning.md` / 개발 → `CLAUDE.development.md` / 조사 → `CLAUDE.research.md`
   - 아이디어 → `CLAUDE.ideation.md` / 분석 → `CLAUDE.analysis.md` / 집필 → `CLAUDE.writing.md`
   - 동향 조사 → `CLAUDE.survey.md` / 학습·교육 → `CLAUDE.teaching.md`
-  - 도메인 특화 → `CLAUDE.domain.md` + `domains/[name].md`
 
 ## Safety
 
