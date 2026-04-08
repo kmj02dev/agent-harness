@@ -3,7 +3,7 @@
 개발은 동작하는 코드를 만드는 단계다. 작성한 코드는 반드시 검증한다.
 
 ## Flow
-1. 현재 상태 파악 (git status, 기존 코드 최소한만)
+1. 현재 상태 파악 (git status, REQUIREMENTS.md, 기존 코드 최소한만)
 2. 가장 단순한 구현부터 시작
 3. 검증: lint → typecheck → test → build/run
 4. 의미 있는 단위로 커밋

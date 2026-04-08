@@ -23,7 +23,7 @@ TODO.md의 매 작업 항목은 실행 후 반드시 평가 단계를 거친다.
 
 ## Session Lifecycle
 
-시작 시: TODO.md + LESSONS.md(전역→프로젝트 순) 읽기 → WORKLOG.md 읽기 → `git log --oneline -5` → 즉시 실행.
+시작 시: TODO.md + LESSONS.md(전역→프로젝트 순) 읽기 → WORKLOG.md 읽기 → `git log --oneline -5` → 즉시 실행. 세션 파일이 없으면 `~/harness/install.sh <project>` 로 생성한다.
 종료 시: TODO.md 갱신 + WORKLOG.md 업데이트 + 변경 커밋.
 
 ## Memory: 파일시스템 = 외부 메모리 (Manus 패턴)
@@ -59,13 +59,17 @@ TODO.md의 매 작업 항목은 실행 후 반드시 평가 단계를 거친다.
 컨텍스트는 가장 희소한 자원이다.
 - 읽기/탐색 작업은 subagent에 위임 (컨텍스트 방화벽)
 - 관련 없는 작업 간 `/clear`
-- 모드별 상세 규칙은 `~/agent_docs/`에 분리. **작업 시작 전 반드시 모드 파일을 읽는다.** 읽지 않으면 작업하지 않는다.
+- **컨텍스트 로드 순서** (작업 시작 전 반드시 실행, 읽지 않으면 작업하지 않는다):
+  1. `~/harness/[mode]/CLAUDE.md` — 모드 지침
+  2. `~/harness/[mode]/LESSONS.md` — 모드 교훈
+  3. `~/harness/[mode]/[domain]/CLAUDE.md` — 모드+도메인 지침 (있으면)
+  4. `~/harness/[mode]/[domain]/LESSONS.md` — 모드+도메인 교훈 (있으면)
+  - 도메인명은 프로젝트 CLAUDE.md의 `domain:` 필드로 판별한다. 해당 디렉토리가 없으면 subagent로 핵심 개념을 조사하여 `[mode]/[domain]/CLAUDE.md`를 생성한 후 진행한다.
   - 모드 판별: 모드/도메인 파일 자체를 수정하는 요청은 harness-dev이며, 해당 모드로 작업하라는 요청과 구분한다.
-  - 하네스·모드·도메인 파일 작성/수정 → `CLAUDE.harness-dev.md`
-  - 모드 + 도메인을 함께 로드: `CLAUDE.[mode].md` + `domains/[name]/base.md` (존재 시)
-  - 기획 → `CLAUDE.planning.md` / 개발 → `CLAUDE.development.md` / 조사 → `CLAUDE.research.md`
-  - 아이디어 → `CLAUDE.ideation.md` / 분석 → `CLAUDE.analysis.md` / 집필 → `CLAUDE.writing.md`
-  - 동향 조사 → `CLAUDE.survey.md` / 학습·교육 → `CLAUDE.teaching.md`
+  - 하네스·모드·도메인 파일 작성/수정 → `harness-dev`
+  - 기획 → `planning` / 개발 → `development` / 조사 → `research`
+  - 아이디어 → `ideation` / 분석 → `analysis` / 집필 → `writing`
+  - 동향 조사 → `survey` / 학습·교육 → `teaching`
 
 ## Safety
 
