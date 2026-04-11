@@ -29,9 +29,9 @@ ${GOAL}
 1. Read TODO.md, LESSONS.md (global → project), WORKLOG.md to understand current state.
 2. Determine the activity mode from the goal and read the corresponding ~/agent_docs/CLAUDE.<mode>.md (e.g., survey, development, research, planning). Follow its rules strictly.
 3. Break the goal into subtasks and update TODO.md.
-4. Execute each subtask. After each, reflect: what worked, what didn't?
-5. Record lessons in LESSONS.md. Record decisions inline in WORKLOG.md (→ 결정: marker).
-6. Update TODO.md as tasks complete.
+4. Execute each subtask. After each, follow the Feedback Loop: Verify (lint/test/build) → Reflect (result + process) → Decide (succeed/retry/escalate).
+5. Record lessons in LESSONS.md (with verification conditions). Record decisions inline in WORKLOG.md (→ 결정: marker).
+6. Update TODO.md as tasks complete. On 2 identical failures, switch approach. On 3 failures, brainstorm with subagent. On 4, mark blocked and move on.
 7. Commit at every meaningful milestone (git add → git commit). Do not defer all commits to the end.
 8. Continue until the goal is fully achieved — do not stop to ask.
 9. When done, update WORKLOG.md with final status and summary, then commit.

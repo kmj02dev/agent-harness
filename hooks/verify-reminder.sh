@@ -11,7 +11,7 @@ fi
 # Only trigger for code files
 if echo "$FILE_PATH" | grep -qE '\.(py|js|ts|jsx|tsx|go|rs|java|c|cpp|h)$'; then
   jq -n '{
-    "additionalContext": "VERIFY LOOP: Code file modified. Remember to run lint/typecheck → test → build before marking task as done."
+    "additionalContext": "FEEDBACK LOOP (Step 1 Verify): Code file modified. Run lint/typecheck → test → build/run before marking task as done. Do not declare success without external signals."
   }'
   exit 0
 fi
