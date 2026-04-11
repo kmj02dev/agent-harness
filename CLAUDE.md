@@ -71,8 +71,9 @@ Verify 결과를 근거로:
   - 도메인명은 프로젝트 CLAUDE.md의 `domain:` 필드로 판별한다. 해당 디렉토리가 없으면 subagent로 핵심 개념을 조사하여 `[mode]/[domain]/CLAUDE.md`를 생성한 후 진행한다.
   - 모드 판별: 모드/도메인 파일 자체를 수정하는 요청은 harness-dev이며, 해당 모드로 작업하라는 요청과 구분한다.
   - 하네스·모드·도메인 파일 작성/수정 → `harness-dev`
-  - 기획 → `planning` / 개발 → `development` / 조사 → `research`
-  - 아이디어 → `ideation` / 분석 → `analysis` / 집필 → `writing`
+  - 기획·방법 판단(선택지 비교 후 결정) → `planning` — 예: "A vs B 중 뭐가 좋아?", "통합 가능성 검토", "접근법 어떻게 생각해?"
+  - 개발 → `development` / 조사 → `research`
+  - 아이디어 발산 → `ideation` / 실험 결과 해석 → `analysis` / 집필 → `writing`
   - 동향 조사 → `survey` / 학습·교육 → `teaching`
 
 ## Safety
